@@ -21,7 +21,7 @@ sh 'mvn clean install'
 
 stage('saving artifacts')
   {
-    def build_number = sh "echo $BUILD_NUMBER"
+    def build_number =  BUILD_NUMBER
     def appVersion = major_version + build_number
     sh 'mv /var/lib/jenkins/workspace/test11111/target/jb*.jar /var/lib/jenkins/workspace/test11111/target/${appName}.${appVersion}.jar'
     echo "The current application name is ${appName}.${appVersion}.jar"
