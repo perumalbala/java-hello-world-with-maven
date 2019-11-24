@@ -23,7 +23,8 @@ sh 'mvn clean install'
 
 stage('saving artifacts')
   {
-    sh 'sh $WORKSPACE/target/jb*.jar $WORKSPACE/target/${appName}.${appVersion}.jar'
+    sh 'sh ${WORKSPACE}/target/jb*.jar ${WORKSPACE}/target/${appName}.${appVersion}.jar'
+    echo "The current application name is ${appName}.${appVersion}.jar"
     sh 'ls -la target/'
   }
 }
