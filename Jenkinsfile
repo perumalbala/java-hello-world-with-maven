@@ -18,12 +18,12 @@ sh 'mvn clean test'
 stage('Build the code')
 {
 sh 'mvn clean install'
-sh 'ls -la'
+
 }
 
 stage('saving artifacts')
   {
-    sh 'sh $WORKSPACE/target/jb*.jar $WORKSPACE/target/${appName}.${appVersion}'
-    sh 'ls -la'
+    sh 'sh $WORKSPACE/target/jb*.jar $WORKSPACE/target/${appName}.${appVersion}.jar'
+    sh 'ls -la target/'
   }
 }
